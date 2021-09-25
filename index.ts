@@ -1,3 +1,5 @@
-import { bootstrap } from "src/main";
+import app from './src/app'
 
-bootstrap()
+app.listen(3000, () => {
+  console.log('App running')
+})
