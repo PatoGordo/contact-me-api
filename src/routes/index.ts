@@ -56,7 +56,7 @@ routes.post('/set', (req, res) => {
 
   conn.connect()
 
-  conn.query(`INSERT INTO \`contacts\` (\`name\`, \`email\`, \`message\`) VALUES ('${name}', '${email}', '${message}')`, (err, result, fields) => {
+  conn.query(`INSERT INTO \`contacts\` (\`name\`, \`email\`, \`message\`) VALUES (?, ?, ?)`, [name, email, message], (err, result, fields) => {
     conn.end()
     
     if(err) {
